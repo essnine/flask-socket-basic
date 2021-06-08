@@ -10,8 +10,8 @@ Anyway. Instructions.
 
 1. clone the repo
 2. create a virtualenvironment, being mindful of the python version required
-3. pip install requirements.txt
-4. python app.py
+3. `pip install requirements.txt`
+4. `python app.py`
 5. ????
 6. profit(?)
 
