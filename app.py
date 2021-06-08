@@ -2,6 +2,8 @@ from flask import Flask, render_template
 from flask_socketio import SocketIO, emit, send
 import os
 from loguru import logger
+import requests
+import random
 
 
 app = Flask(__name__)
@@ -33,6 +35,13 @@ def handle_chat_message(data):
 @app.route('/chat')
 def chat():
     return render_template('chat.html')
+
+
+
+@app.route('/')
+def home():
+    fortune_file: list = requests.get("https://cdn.jsdelivr.net/npm/fortune-cookie@0.0.1/fortune-cookie.json").json()
+    return random.choice(fortune_file)
 
 
 if __name__ == "__main__":
