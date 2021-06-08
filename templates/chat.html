@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Flask-SocketIO-Chat</title>
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.4.2.min.js"></script>
+        <script type="text/javascript" src="//cdn.socket.io/4.0.1/socket.io.min.js"></script>
+        <script type="text/javascript" charset="utf-8">
+            var socket;
+            $(document).ready(function(){
+                connURL = 'http://' + document.domain + ':' + location.port + '/chat';
+                socket = io.connect(connURL);
+                socket.on('connect', function() {
+                    socket.emit('message', "sample message");
+                    socket.emit('json', {});
+                });
+            });
+
+            function pingServer() {
+                socket.emit("chatMessage", {"message": "Ping!"})
+            };
+        </script>
+    </head>
+    <body>
+        <h1>Flask-SocketIO-Chat: {{ room }}</h1>
+        <a href="#" onclick="pingServer();">Ping!</a>
+    </body>
+</html>
