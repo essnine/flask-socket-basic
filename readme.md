@@ -1,6 +1,6 @@
 # Flask Socket Basic
 
-I don't care if the name is grammatically incorrect.
+I **don't** care if the name is grammatically incorrect.
 
 Anyway. This is a simple Flask app. It needs Python 3.6+, and will not work with Internet Explorer (in case any of you are running ancient hardware).
 
